@@ -1,0 +1,17 @@
+import pickle
+import os
+
+class inf_list:
+    def __init__(self):
+        listing = [0,1]
+        listing[1:1] = [listing]
+        self.listing = listing
+
+    def unlazy_eval(self,size):
+        to_eval = "listing[1]"
+        for i in xrange(size):
+            to_eval += "[1]"
+        
+        return eval(to_eval)
+
+    
